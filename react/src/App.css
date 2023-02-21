@@ -1,0 +1,191 @@
+.app {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.wrapper {
+    display: flex;
+}
+
+.wrapper aside {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 250px;
+    height: 100vh;
+    background-color: #352e5a;
+    color: #92979d;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.wrapper main {
+    width: calc(100% - 240px);
+    padding: 2rem;
+    margin-left: 240px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+aside a {
+    text-decoration: none;
+    color: #92979d;
+    display: block;
+}
+
+aside .accordion-item {
+    border: none !important;
+}
+
+.accordion-button::after {
+    background-image: url("./assets/down-chevron.png") !important;
+}
+
+.accordion-button:not(.collapsed)::after {
+    background-image: url("./assets/down-chevron.png") !important;
+}
+
+.accordion .accordion-item:first-child .accordion-header .accordion-button::after {
+    display: none !important;
+}
+
+aside .accordion-body {
+    background-color: #352e5a !important;
+    padding: 0.5rem 0 0 1.3rem !important;
+}
+
+aside .accordion-body a {
+    color: #fff !important;
+    font-size: 0.9rem;
+    padding: 0.3rem 0;
+    transition: all 0.5 ease !important;
+}
+
+aside .accordion-body a:hover {
+    color: #92979d !important;
+}
+
+.accordion-button {
+    background-color: #352e5a !important;
+    color: #92979d !important;
+}
+
+.accordion-button:focus {
+    box-shadow: none !important;
+}
+
+.accordion-button:not(.collapsed) {
+    color: #ec8153 !important;
+    background-color: #443c6f !important;
+    box-shadow: 0 0 2px 0 #443c6f !important;
+}
+
+.logout {
+    position: absolute;
+    width: 100%;
+    bottom: 2rem;
+    left: 0;
+    text-align: center;
+}
+
+.logout button {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    font-size: 1.5rem;
+    color: #ec8153;
+}
+
+/**Form**/
+
+.user__form {
+    padding: 2rem;
+    width: 550px;
+    max-width: 550px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.5);
+    border-radius: 1rem;
+}
+
+.user__form .login__form {
+    width: 60%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.user__form .login__form div,
+.user__form .login__form div input,
+.user__form .login__form button {
+    width: 100%;
+}
+
+.user__form .login__form div {
+    margin-top: 0.5rem;
+}
+
+.user__form .login__form button {
+    margin-top: 1.5rem;
+}
+
+.user__form .register__form {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-gap: 1rem;
+}
+
+.user__form form label {
+    display: block;
+}
+
+.user__form form button {
+    grid-column: span 2;
+}
+
+.animated {
+    -webkit-animation-duration: 0.5s;
+    animation-duration: 0.5s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+}
+
+.fadeInDown {
+    -webkit-animation-name: fadeInDown;
+    animation-name: fadeInDown;
+}
+
+@keyframes fadeInDown {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.user__form button svg {
+    animation: button-loading-spinner 1s ease infinite;
+}
+
+@keyframes button-loading-spinner {
+    from {
+        transform: rotate(0turn);
+    }
+
+    to {
+        transform: rotate(1turn);
+    }
+}
